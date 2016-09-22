@@ -28,3 +28,6 @@ MySQL
 mlecOverflow
 쪽지
 과제
+
+
+AWS 했다
