@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.member.MemberDAO">
+	<select id="checkId" parameterType="string" resultType="string">
+		select id
+		  from mlec_member
+		 where id = #{id} 
+	</select>
+	<select id="checkEmail" parameterType="string" resultType="string">
+		select email
+		  from mlec_member
+		 where email = #{email}
+	</select>
+	<insert id="joinMember" parameterType="member">
+		insert into mlec_member (id, name, pass, postalCode, address, detailAddress, email, faceBook, major, regDate, profile)
+		values (#{id}, #{name}, #{pass}, #{postalCode}, #{address}, #{detailAddress}, #{email}, #{faceBook}, #{major}, sysdate(), #{profile})
+	</insert>
+	<insert id="imgUpload" parameterType="file">
+		insert into mlecPicture (id, realpath, oriname, realname, filepath)
+		values (#{id}, #{realpath}, #{oriname}, #{realname}, #{filepath})
+	</insert>
+	<select id="login" parameterType="member" resultType="member">
+		select member_no as memberNo, id, name, pass, postalCode, address, detailAddress, email, profile, faceBook, major, regDate
+		  from mlec_member
+		 where id = #{id}
+		   and pass = #{pass}
+	</select>
+	<select id="checkFaceBook" parameterType="member" resultType="member">
+		select member_no as memberNo, id, name, pass, postalCode, address, detailAddress, email, profile, faceBook, major, regDate
+		  from mlec_member
+		 where email = #{email}
+		   and faceBook = 'y'
+	</select>
+	<update id="updateFaceBook" parameterType="member">
+		update mlec_member
+		   set email = #{email},
+		       faceBook = #{faceBook},
+		       name = #{name},
+		       profile = #{profile}
+		 where id = #{id}
+	</update>
+	<update id="updateInfo" parameterType="member">
+		update mlec_member
+		   set pass = #{pass},
+		       postalCode = #{postalCode},
+		       address = #{address},
+		       detailAddress = #{detailAddress},
+		       major = #{major}
+		 where id = #{id}
+	</update>
+	<select id="getInfo" parameterType="string" resultType="member">
+		select member_no as memberNo, id, name, pass, postalCode, address, detailAddress, email, profile, faceBook, major, regDate
+		  from mlec_member
+	     where id = #{id}
+	</select>
+	<update id="moreInfoUpdate" parameterType="member">
+		update mlec_member
+		   set email = #{email},
+		       faceBook = #{faceBook},
+		       name = #{name},
+		       profile = #{profile}
+		 where member_no = #{memberNo} 
+	</update>
+	<insert id="imgUpdate" parameterType="file">
+		insert into mlec_picture(member_no,realpath,oriname,realname,filepath) 
+		values(#{memberNo},#{realpath},#{oriname},#{realname},#{filepath})
+	</insert>
+	<select id="getImgFile" parameterType="int" resultType="file">
+		select * 
+		  from mlec_picture
+		 where member_no = #{no}
+	</select>
+    </mapper>
+    

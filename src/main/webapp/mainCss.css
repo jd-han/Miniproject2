@@ -1,0 +1,170 @@
+@CHARSET "UTF-8";
+
+html, body,#container {
+		height: 100%;
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+		position: relative;
+	}
+	#menu-Bar {
+		width: 30%;
+		height: 100%;
+		border: 2px solid pink;
+		z-index: 2;
+		position: absolute;
+		display: none;
+		left: 0;
+		top: 0;
+	}
+	#menu-Btn {
+		background-color: pink;
+		border: none;
+	}
+	#top {
+		width: 100%;
+		height: 100%;
+		border-bottom : 1px solid #123456;
+		text-align: right;
+		font-weight: bold;
+		font-size: 20px;	
+		z-index: 1;
+	}
+	#top > a {
+		color : #123456;
+		padding-right: 40px;
+		line-height: 50px;
+		text-decoration: none;
+	}
+	#top > ul {
+		padding : 0;
+		margin: 0;
+		margin-right: 30px;
+		position: relative;
+	}
+	#memberInfoText {
+		color : white;
+		text-decoration: none;
+	}
+	#memberInfoTextList {
+		color : black;
+		text-decoration: none;
+	}
+	#top > ul, #top > ul > li > ul > li {
+		list-style: none;
+	}
+	#top > ul > li > ul > li {
+		display: none;
+	}
+	#top > ul > li > ul > li {
+		border: 1px solid black;
+	}
+	#top > ul > li > ul > li > a:hover {
+		background-color: #123456;
+		color: white;
+		border: 1px solid black;
+		
+	}
+	#loginTextBox {
+		border: 1px solid #123456;
+		width: 25%;
+		text-align: center;
+		position: absolute;
+		left: 75%; 
+		display: none;
+	}
+	#loginTextBox > button {
+		background-color: white;
+		border: none;
+	}
+	#faceBookLogin {
+		margin-left: 25%;
+		margin-top: 15%;
+		width: 50%;
+		height: 50%;
+		text-align: center;
+		display: none;
+		
+	}
+	#faceBookLogin > button {
+		width: 250px;
+		height: 40px;
+		font-weight: bold;
+		background-color: white;
+		border: 1px solid #123456;
+	}
+	#loginForm, #moreInfo {
+		width : 50%; 
+		height : 70%;
+		position : absolute;
+		top : 10%;
+		left: 25%;
+		display: none;
+	}
+	#moreInfo {
+ 		display: none; 
+	}
+	#loginForm > table {
+		width: 50%;
+		height: 400px;
+		text-align: left;
+	}
+	#moreInfo > table {
+		width: 70%;
+		height: 300px;
+		text-align: left;
+	}
+	#checkId {
+		font-size: 5px;
+	}
+	#loginForm, #moreInfo {
+		text-align: center;
+	}
+	#loginForm > span, #moreInfo > span {
+		text-align : left;
+		font-size: 10px;
+	}
+	#loginForm > #memberJoinBtn > button, #loginForm > #memberUpdateBtn > button, #submitMoreInfo {
+		width: 100px;
+		height: 50px;
+		margin-left: 30px;
+		background-color: white;
+		border: 1px solid skyblue;
+	}
+	#moreInfo > #memberJoinBtn > button, #moreInfo > #memberUpdateBtn > button {
+		width: 100px;
+		height: 50px;
+		margin-left: 30px;
+		background-color: white;
+		border: 1px solid skyblue;
+	}
+	#completeEmail {
+		display: none;
+	}
+	#memberUpdate, #memberUpdateBtn {
+		display: none;
+	}
+	#pLeft {
+		width: 250px;
+		height: 100px;
+	}
+	#pTop {
+		width: 80px;
+		height: 100px;
+		border: 1px solid #123456;
+	}
+	#pTop > img {
+		width: 80px;
+		height: 100px;
+	}
+	#moreInfo > table, #pLeft, #pTop {
+		float: left;
+	}
+	#MoreInfoDiv {
+		clear: both;
+	}
+	#submitEmail {
+		background-color: white;
+		border: 1px solid skyblue;
+	}
+	
